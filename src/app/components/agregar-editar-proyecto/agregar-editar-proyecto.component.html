@@ -1,0 +1,172 @@
+<h3 class="mt-3">Agregar Proyecto</h3>
+<form [formGroup]="agregarProyecto" (ngSubmit)="agregar()">
+  <div class="mb-3">
+    <label for="idFacultad" class="form-label">Facultad</label>
+    <input formControlName="idFacultad" type="text" class="form-control" id="idFacultad"
+      placeholder="Nombre de la Facultad">
+    <span *ngIf="agregarProyecto.get('idFacultad')?.invalid && agregarProyecto.get('idFacultad')?.touched"
+      class="text-danger">La <strong>Facultad</strong> es requerida</span>
+  </div>
+  <div class="mb-3">
+    <label for="idDepartamento" class="form-label">Departamento</label>
+    <input formControlName="idDepartamento" type="text" class="form-control" id="idDepartamento"
+      placeholder="Nombre del Departamento">
+    <span *ngIf="agregarProyecto.get('idDepartamento')?.invalid && agregarProyecto.get('idDepartamento')?.touched"
+      class="text-danger">El <strong>Departamento</strong> es requerido</span>
+  </div>
+  <div class="mb-3">
+    <label for="idGrupoInvestigacion" class="form-label">Grupo Investigacion</label>
+    <input formControlName="idGrupoInvestigacion" type="text" class="form-control" id="idGrupoInvestigacion"
+      placeholder="Nombre del Grupo Investigacion">
+    <span
+      *ngIf="agregarProyecto.get('idGrupoInvestigacion')?.invalid && agregarProyecto.get('idGrupoInvestigacion')?.touched"
+      class="text-danger">El <strong>Grupo Investigacion</strong> es requerido</span>
+  </div>
+  <div class="mb-3">
+    <label for="nombreProyecto" class="form-label">Nombre del Proyecto</label>
+    <input formControlName="nombreProyecto" type="text" class="form-control" id="nombreProyecto"
+      placeholder="Nombre del Proyecto">
+    <span *ngIf="agregarProyecto.get('nombreProyecto')?.invalid && agregarProyecto.get('nombreProyecto')?.touched"
+      class="text-danger">El <strong>nombre del Proyecto</strong> es requerido</span>
+  </div>
+  <div class="mb-3">
+    <label for="anioInicio" class="form-label">Año de Inicio</label>
+    <input formControlName="anioInicio" type="text" class="form-control" id="anioInicio"
+      placeholder="Nombre del Año Inicio">
+    <span *ngIf="agregarProyecto.get('anioInicio')?.invalid && agregarProyecto.get('anioInicio')?.touched"
+      class="text-danger">El <strong>Año Inicio</strong> es requerido</span>
+  </div>
+  <div class="mb-3">
+    <label for="fechaInicio" class="form-label">Fecha de Inicio</label>
+    <input formControlName="fechaInicio" type="date" class="form-control" id="fechaInicio"
+      placeholder="Nombre del fechaInicio">
+    <span *ngIf="agregarProyecto.get('fechaInicio')?.invalid && agregarProyecto.get('fechaInicio')?.touched"
+      class="text-danger">La <strong>Fecha de Inicio</strong> es requerida</span>
+  </div>
+  <div class="mb-3">
+    <label for="fechaInicialTerminacion" class="form-label">Fecha inicial de terminacion</label>
+    <input formControlName="fechaInicialTerminacion" type="date" class="form-control" id="fechaInicialTerminacion"
+      placeholder="Nombre del fechaInicialTerminacion">
+    <span
+      *ngIf="agregarProyecto.get('fechaInicialTerminacion')?.invalid && agregarProyecto.get('fechaInicialTerminacion')?.touched"
+      class="text-danger">La <strong>Fecha Inicial Terminacion</strong> es requerida</span>
+  </div>
+  <div class="mb-3">
+    <label for="fechaEvaluacion" class="form-label">Fecha de Evaluacion</label>
+    <input formControlName="fechaEvaluacion" type="text" class="form-control" id="fechaEvaluacion"
+      placeholder="Nombre del Creador">
+    <span *ngIf="agregarProyecto.get('fechaEvaluacion')?.invalid && agregarProyecto.get('fechaEvaluacion')?.touched"
+      class="text-danger">La <strong>Fecha Evaluacion</strong> es requerida</span>
+  </div>
+  <div class="mb-3">
+    <label for="fechaRealFinalizacion" class="form-label">Fecha Real Finalizacion</label>
+    <input formControlName="fechaRealFinalizacion" type="text" class="form-control" id="fechaRealFinalizacion"
+      placeholder="Nombre de la fecha Real Finalizacion">
+    <span
+      *ngIf="agregarProyecto.get('fechaRealFinalizacion')?.invalid && agregarProyecto.get('fechaRealFinalizacion')?.touched"
+      class="text-danger">La <strong>Fecha Real Finalizacion</strong> es requerida</span>
+  </div>
+  <div>
+    <label for="cofinanciacion" class="form-label">Cofinanciacion</label>
+    <input formControlName="cofinanciacion" type="checkbox" class="form-control" id="cofinanciacion"
+      placeholder="Nombre de la cofinanciacion">
+  </div>
+  <div class="mb-3">
+    <label for="entidadCofinanciadora" class="form-label">Entidad Cofinanciadora</label>
+    <input formControlName="entidadCofinanciadora" type="text" class="form-control" id="entidadCofinanciadora"
+      placeholder="Nombre de la Entidad Cofinanciadora">
+  </div>
+  <div class="mb-3">
+    <label for="valorCofinanciacionRecurrente" class="form-label">Valor Cofinanciacion Recurrente</label>
+    <input formControlName="valorCofinanciacionRecurrente" type="number" class="form-control"
+      id="valorCofinanciacionRecurrente" placeholder="Nombre del valor Cofinanciacion Recurrente">
+  </div>
+  <div class="mb-3">
+    <label for="valorCofinanciacionNoRecurrente" class="form-label">valorCofinanciacionNoRecurrente</label>
+    <input formControlName="valorCofinanciacionNoRecurrente" type="number" class="form-control"
+      id="valorCofinanciacionNoRecurrente" placeholder="Nombre del valor Cofinanciacion No Recurrente">
+  </div>
+  <div class="mb-3">
+    <label for="valorRecurrenteUcaldas" class="form-label">Valor Recurrente Ucaldas</label>
+    <input formControlName="valorRecurrenteUcaldas" type="number" class="form-control" id="valorRecurrenteUcaldas"
+      placeholder="Nombre del valor Recurrente Ucaldas">
+    <span
+      *ngIf="agregarProyecto.get('valorRecurrenteUcaldas')?.invalid && agregarProyecto.get('valorRecurrenteUcaldas')?.touched"
+      class="text-danger">El <strong>valor Recurrente Ucaldas</strong> es requerido</span>
+  </div>
+  <div class="mb-3">
+    <label for="valorAsignadoVip" class="form-label">Valor Asignado VIP</label>
+    <input formControlName="valorAsignadoVip" type="number" class="form-control" id="valorAsignadoVip"
+      placeholder="Nombre del valor Asignado Vip">
+    <span *ngIf="agregarProyecto.get('valorAsignadoVip')?.invalid && agregarProyecto.get('valorAsignadoVip')?.touched"
+      class="text-danger">El <strong>valor AsignadoV ip</strong> es requerido</span>
+  </div>
+  <div class="mb-3">
+    <label for="idConvocatoria" class="form-label">Id Convocatoria</label>
+    <input formControlName="idConvocatoria" type="text" class="form-control" id="idConvocatoria"
+      placeholder="Id Convocatoria">
+    <span *ngIf="agregarProyecto.get('idConvocatoria')?.invalid && agregarProyecto.get('idConvocatoria')?.touched"
+      class="text-danger">El <strong>id Convocatoria</strong> es requerido</span>
+  </div>
+  <div class="mb-3">
+    <label for="observacionesProyecto" class="form-label">Observaciones del Proyecto</label>
+    <input formControlName="observacionesProyecto" type="text" class="form-control" id="observacionesProyecto"
+      placeholder="Nombre del observacionesProyecto">
+    <span
+      *ngIf="agregarProyecto.get('observacionesProyecto')?.invalid && agregarProyecto.get('observacionesProyecto')?.touched"
+      class="text-danger">Las <strong>Observaciones del Proyecto</strong> son requeridas</span>
+  </div>
+  <div class="mb-3">
+    <label for="objetivo" class="form-label">Objetivo</label>
+    <input formControlName="objetivo" type="text" class="form-control" id="objetivo" placeholder="Nombre del objetivo">
+    <span *ngIf="agregarProyecto.get('objetivo')?.invalid && agregarProyecto.get('objetivo')?.touched"
+      class="text-danger">El <strong>objetivo</strong> es requerido</span>
+  </div>
+  <div class="mb-3">
+    <label for="resumen" class="form-label">Resumen</label>
+    <input formControlName="resumen" type="text" class="form-control" id="resumen" placeholder="Nombre del resumen">
+    <span *ngIf="agregarProyecto.get('resumen')?.invalid && agregarProyecto.get('resumen')?.touched"
+      class="text-danger">El <strong>resumen</strong> es requerido</span>
+  </div>
+  <div class="mb-3">
+    <label for="resultadosEsperados" class="form-label">Resultados Esperados</label>
+    <input formControlName="resultadosEsperados" type="text" class="form-control" id="resultadosEsperados" placeholder="Resultados Esperados">
+    <span *ngIf="agregarProyecto.get('resultadosEsperados')?.invalid &&
+      agregarProyecto.get('resultadosEsperados')?.touched"
+      class="text-danger">Los <strong>Resultados Esperados</strong> son requeridos</span>
+  </div>
+
+  <div class="mb-3">
+    <label for="idTipoProyecto" class="form-label">Tipo Proyecto</label>
+    <input formControlName="idTipoProyecto" type="text" class="form-control" id="idTipoProyecto"
+      placeholder="Nombre del Tipo Proyecto">
+    <span *ngIf="agregarProyecto.get('idTipoProyecto')?.invalid && agregarProyecto.get('idTipoProyecto')?.touched"
+      class="text-danger">El <strong>Tipo Proyecto</strong> es requerido</span>
+  </div>
+  <div class="mb-3">
+    <label for="areaEstrategica" class="form-label">Area Estrategica</label>
+    <input formControlName="areaEstrategica" type="text" class="form-control" id="areaEstrategica" placeholder="Nombre del areaEstrategica">
+    <span *ngIf="agregarProyecto.get('areaEstrategica')?.invalid && agregarProyecto.get('areaEstrategica')?.touched"
+      class="text-danger"> La <strong>Area Estrategica</strong> es requerida</span>
+  </div>
+  <div class="mb-3">
+    <label for="areaEstrategica2" class="form-label">Area Estrategica 2</label>
+    <input formControlName="areaEstrategica2" type="text" class="form-control" id="areaEstrategica2" placeholder="Nombre del area Estrategica 2">
+    <span *ngIf="agregarProyecto.get('areaEstrategica2')?.invalid && agregarProyecto.get('areaEstrategica2')?.touched"
+      class="text-danger">El <strong>Area Estrategica 2</strong> es requerido</span>
+  </div>
+  <div class="mb-3">
+    <label for="actaSeguimiento" class="form-label">Acta de Seguimiento</label>
+    <input formControlName="actaSeguimiento" type="text" class="form-control" id="actaSeguimiento" placeholder="Nombre del acta Seguimiento">
+    <span *ngIf="agregarProyecto.get('actaSeguimiento')?.invalid && agregarProyecto.get('actaSeguimiento')?.touched"
+      class="text-danger">El <strong>acta de Seguimiento</strong> es requerido</span>
+  </div>
+  <div class="mb-3">
+    <label for="estadoProyecto" class="form-label">Estado del proyecto</label>
+    <input formControlName="estadoProyecto" type="text" class="form-control" id="estadoProyecto" placeholder="Nombre del estado Proyecto">
+    <span *ngIf="agregarProyecto.get('estadoProyecto')?.invalid && agregarProyecto.get('estadoProyecto')?.touched"
+      class="text-danger">El <strong>estado Proyecto</strong> es requerido</span>
+  </div>
+  <button type="submit" [disabled]=agregarProyecto.invalid class="btn btn-primary float-end">Aceptar</button>
+  <button type="button" routerLink="/" class="btn btn-secondary">Volver</button>
+</form>

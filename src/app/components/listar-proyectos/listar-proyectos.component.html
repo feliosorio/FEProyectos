@@ -1,0 +1,48 @@
+<div class="row mt-3">
+    <div class="col-lg-6">
+        <h3>Listado de Proyectos</h3>
+    </div>
+    <div class="col-lg-6">
+        <button class="btn btn-primary float-end" routerLink = "/agregar">Nuevo Proyecto</button>
+    </div>
+</div>
+
+<table *ngIf="listaProyectos.length > 0 " class="table table-hover mt-3">
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Nombre</td>
+            <td>Facultad</td>
+            <td>Departamento</td>
+            <td>Convocatoria</td>
+            <td>Tipo</td>
+            <td>Fecha Inicio</td>
+            <td>Fecha Fin</td>
+            <td>Estado</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let Proyecto of listaProyectos">
+            <td>
+                <a [routerLink]="['/ver',1]">{{Proyecto.id}}</a></td>
+            <td>{{Proyecto.nombreProyecto}}</td>
+            <td>{{Proyecto.idFacultad}}</td>
+            <td>{{Proyecto.idDepartamento}}</td>
+            <td>{{Proyecto.idConvocatoria}}</td>
+            <td>{{Proyecto.idTipoProyecto}}</td>
+            <td>{{Proyecto.fechaInicio| date: 'dd/mm/yyyy'}}</td>
+            <td>{{Proyecto.fechaRealFinalizacion| date: 'dd/mm/yyyy'}}</td>
+            <td>{{Proyecto.estadoProyecto }}</td>
+            <td style="width: 10%"><button class="btn btn-primary btn-sm float-end">Editar</button>
+            </td>
+            <td style="width: 10%">
+                <button class="btn btn-danger btn-sm float-end">Eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div *ngIf="listaProyectos.length == 0">
+    <h5>No hay Proyectos para mostrar</h5>
+</div>
